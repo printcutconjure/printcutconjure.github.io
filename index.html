@@ -4,41 +4,94 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="facebook-domain-verification" content="vwgfp0ys4fd707230s6zl49rw0u3zl" />
-  
 <title>PrintCutConjure — Printable Planners, Journals, Wall Art & More</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fdf8f3; color: #3a2e2e; text-align: center; }
-  header { background: linear-gradient(135deg, #5b3a6e, #8e5ea2); color: #fff; padding: 48px 20px 36px; }
-  header h1 { margin: 0 0 8px; font-size: 2.4em; letter-spacing: 1px; }
-  header p { margin: 0; font-size: 1.1em; opacity: .92; }
-  main { max-width: 720px; margin: 0 auto; padding: 32px 20px 48px; }
-  .btn { display: inline-block; background: #f1641e; color: #fff; text-decoration: none; padding: 14px 34px; border-radius: 30px; font-size: 1.15em; margin-top: 18px; }
-  .btn:hover { background: #d9550f; }
-  .cats { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 26px 0 6px; padding: 0; list-style: none; }
-  .cats li { background: #efe6f5; border: 1px solid #d9c6e8; border-radius: 20px; padding: 8px 16px; font-size: .98em; }
-  footer { color: #8a7a7a; font-size: .9em; padding: 0 20px 30px; }
+  * { box-sizing: border-box; }
+  body { font-family: 'Quicksand', sans-serif; margin: 0; background: #fff9f4; color: #43303e; }
+  .topbar { background: #2e1a33; color: #ffd9ec; text-align: center; padding: 9px 12px; font-weight: 600; letter-spacing: .4px; font-size: .95em; }
+  header { background: linear-gradient(120deg, #5b2a6e 0%, #a03d8f 38%, #e5639a 68%, #f59e6c 100%); color: #fff; text-align: center; padding: 58px 20px 46px; position: relative; overflow: hidden; }
+  header .sparkle { position: absolute; color: rgba(255,255,255,.75); font-size: 1.4em; }
+  header h1 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 4em; margin: 0 0 4px; text-shadow: 0 3px 14px rgba(0,0,0,.25); }
+  header .tag { font-family: 'Playfair Display', serif; font-size: 1.25em; margin: 0; opacity: .96; }
+  header .sub { margin: 12px auto 0; max-width: 560px; font-size: 1.02em; opacity: .92; }
+  .btn { display: inline-block; background: #ff7a1a; color: #fff; text-decoration: none; padding: 15px 38px; border-radius: 40px; font-size: 1.18em; font-weight: 700; margin-top: 24px; box-shadow: 0 6px 18px rgba(0,0,0,.28); transition: transform .15s ease, background .15s ease; }
+  .btn:hover { background: #f96a05; transform: translateY(-2px) scale(1.03); }
+  main { max-width: 980px; margin: 0 auto; padding: 36px 18px 10px; }
+  h2 { font-family: 'Playfair Display', serif; text-align: center; font-size: 1.9em; margin: 26px 0 6px; color: #5b2a6e; }
+  .h2sub { text-align: center; color: #8a6d84; margin: 0 0 22px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+  .card { border-radius: 18px; padding: 22px 16px 18px; text-align: center; border: 2px solid rgba(255,255,255,.7); box-shadow: 0 4px 14px rgba(91,42,110,.12); transition: transform .15s ease; }
+  .card:hover { transform: translateY(-4px); }
+  .card .icon { font-size: 2.3em; display: block; margin-bottom: 8px; }
+  .card h3 { margin: 0 0 6px; font-family: 'Playfair Display', serif; font-size: 1.15em; }
+  .card p { margin: 0; font-size: .93em; color: #5d4756; }
+  .c1 { background: #ffe3ef; } .c2 { background: #e4f2ff; } .c3 { background: #fff3d6; } .c4 { background: #e6f7e9; }
+  .c5 { background: #efe6ff; } .c6 { background: #ffe9dd; } .c7 { background: #e0f7f4; } .c8 { background: #fde8e8; }
+  .feat { background: #fff; border: 2px solid #f3d9ea; }
+  .feat .price { display: inline-block; background: #5b2a6e; color: #fff; border-radius: 20px; padding: 3px 14px; font-weight: 700; margin-top: 10px; }
+  .feat a.shop { display: inline-block; margin-top: 10px; color: #e5639a; font-weight: 700; text-decoration: none; }
+  .feat a.shop:hover { text-decoration: underline; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 8px; }
+  .step { background: #2e1a33; color: #ffe9f4; border-radius: 16px; padding: 18px 14px; text-align: center; }
+  .step .n { font-family: 'Great Vibes', cursive; font-size: 2em; color: #ffb3d9; display: block; }
+  .step p { margin: 4px 0 0; font-size: .95em; }
+  .cta { text-align: center; padding: 18px 0 8px; }
+  footer { text-align: center; color: #9a8595; font-size: .92em; padding: 26px 20px 34px; }
+  footer .heart { color: #e5639a; }
 </style>
 </head>
 <body>
+<div class="topbar">✦ Instant downloads &nbsp;•&nbsp; New printables every week &nbsp;•&nbsp; Most $4.99–$14.99 ✦</div>
 <header>
+  <span class="sparkle" style="top:18px; left:8%;">✦</span>
+  <span class="sparkle" style="top:64px; right:10%;">✦</span>
+  <span class="sparkle" style="bottom:20px; left:16%;">✧</span>
+  <span class="sparkle" style="bottom:34px; right:20%;">✧</span>
   <h1>PrintCutConjure</h1>
-  <p>Instant-download printables — made with love in Florida</p>
+  <p class="tag">Pretty printables for planners, journals &amp; happy walls</p>
+  <p class="sub">Instant-download planners, junk journals, wall art, gift tags, stickers, bookmarks and calendars — designed with love in Florida and ready to print at home.</p>
+  <a class="btn" href="https://printcutconjure.etsy.com">✿ Shop on Etsy ✿</a>
 </header>
 <main>
-  <p>Planners, junk journals, wall art, gift tags, stickers, bookmarks, calendars and more — all digital downloads you can print at home, most from $4.99 to $14.99.</p>
-  <ul class="cats">
-    <li>Printable Planners</li>
-    <li>Junk Journals</li>
-    <li>Wall Art</li>
-    <li>Gift Tags</li>
-    <li>Stickers</li>
-    <li>Bookmarks</li>
-    <li>2027 Calendars</li>
-    <li>Wedding & Baby Shower Kits</li>
-  </ul>
-  <a class="btn" href="https://printcutconjure.etsy.com">Shop on Etsy</a>
-  <p style="margin-top:26px;">Every purchase is delivered instantly by Etsy as a ready-to-print PDF.</p>
+  <h2>Shop by Favorite</h2>
+  <p class="h2sub">Tap a category to browse the Etsy shop</p>
+  <div class="grid">
+    <div class="card c1"><span class="icon">🗓️</span><h3>Printable Planners</h3><p>Life, glam, macabre, MS-friendly, teacher &amp; more — $14.99</p></div>
+    <div class="card c2"><span class="icon">📖</span><h3>Junk Journals</h3><p>Witchy, Parisian, Egyptian, travel &amp; Christmas sets — $14.99</p></div>
+    <div class="card c3"><span class="icon">🖼️</span><h3>Wall Art</h3><p>Coastal, Florida Christmas &amp; Thanksgiving 3-print sets — $9.99</p></div>
+    <div class="card c4"><span class="icon">🏷️</span><h3>Gift Tags</h3><p>Editable 8-packs for every theme under the sun — $5.99</p></div>
+    <div class="card c5"><span class="icon">✨</span><h3>Planner Stickers</h3><p>Glam, bougie, macabre, teacher &amp; pastel sets — $4.99</p></div>
+    <div class="card c6"><span class="icon">🔖</span><h3>Bookmarks</h3><p>Kawaii, horror, spicy romance &amp; retro 80s — $4.99</p></div>
+    <div class="card c7"><span class="icon">📅</span><h3>2027 Calendars</h3><p>Spells, astrology, Kawaii, Parisian &amp; seasonal — $9.99–$12.99</p></div>
+    <div class="card c8"><span class="icon">🎀</span><h3>Wedding &amp; Baby</h3><p>Invitation kits, thank-yous &amp; games — $12.99</p></div>
+  </div>
+
+  <h2>Fan Favorites</h2>
+  <p class="h2sub">A few of the newest loves in the shop</p>
+  <div class="grid">
+    <div class="card feat"><span class="icon">🌴</span><h3>Florida Christmas Wall Art</h3><p>Palm trees, a Santa-hat flamingo &amp; a sand snowman</p><span class="price">$9.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4622439332">See it on Etsy →</a></div>
+    <div class="card feat"><span class="icon">🦩</span><h3>Coastal Wall Art Set</h3><p>Salt in the air, sand in my hair — beachy 3-print set</p><span class="price">$9.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4622427593">See it on Etsy →</a></div>
+    <div class="card feat"><span class="icon">👑</span><h3>Princess Planner</h3><p>A fairytale 15-page planner, sweet as can be</p><span class="price">$14.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4621906821">See it on Etsy →</a></div>
+    <div class="card feat"><span class="icon">🔮</span><h3>12 Months of Spells 2027</h3><p>A spell for every month of the year</p><span class="price">$12.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4621779542">See it on Etsy →</a></div>
+    <div class="card feat"><span class="icon">🧡</span><h3>MS Planner</h3><p>Large-print, gentle-paced planning that gets it</p><span class="price">$14.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4621790070">See it on Etsy →</a></div>
+    <div class="card feat"><span class="icon">💖</span><h3>Country Glam Planner</h3><p>Pink, sparkle and rhinestone-cowgirl energy</p><span class="price">$14.99</span><br><a class="shop" href="https://printcutconjure.etsy.com/listing/4621689001">See it on Etsy →</a></div>
+  </div>
+
+  <h2>How It Works</h2>
+  <p class="h2sub">From cart to craft table in minutes</p>
+  <div class="steps">
+    <div class="step"><span class="n">One</span><p>Pick your favorite printable in the Etsy shop</p></div>
+    <div class="step"><span class="n">Two</span><p>Check out securely on Etsy</p></div>
+    <div class="step"><span class="n">Three</span><p>Download your PDF instantly</p></div>
+    <div class="step"><span class="n">Four</span><p>Print at home &amp; enjoy!</p></div>
+  </div>
+
+  <div class="cta">
+    <a class="btn" href="https://printcutconjure.etsy.com">Browse All 167 Printables</a>
+  </div>
 </main>
-<footer>© Kris Weeks • PrintCutConjure</footer>
+<footer>Made with <span class="heart">♥</span> in Florida &nbsp;•&nbsp; © Kris Weeks • PrintCutConjure</footer>
 </body>
 </html>
