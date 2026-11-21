@@ -4,20 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PrintCutConjure — Checkout</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fdf8f3; color: #3a2e2e; text-align: center; }
-  main { max-width: 640px; margin: 0 auto; padding: 56px 20px; }
-  .btn { display: inline-block; background: #f1641e; color: #fff; text-decoration: none; padding: 14px 34px; border-radius: 30px; font-size: 1.15em; margin-top: 18px; }
-  .btn:hover { background: #d9550f; }
-  #items { margin: 18px auto; max-width: 480px; text-align: left; }
+  body { font-family: 'Quicksand', sans-serif; margin: 0; background: linear-gradient(160deg, #fdf3f9, #fff9f4); color: #43303e; min-height: 100vh; }
+  main { max-width: 620px; margin: 0 auto; padding: 64px 22px; text-align: center; }
+  h1 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 3em; color: #5b2a6e; margin: 0 0 6px; }
+  .card { background: #fff; border: 2px solid #f3d9ea; border-radius: 20px; padding: 28px 24px; box-shadow: 0 8px 24px rgba(91,42,110,.12); margin-top: 18px; }
+  .btn { display: inline-block; background: #ff7a1a; color: #fff; text-decoration: none; padding: 14px 34px; border-radius: 40px; font-size: 1.12em; font-weight: 700; margin-top: 18px; box-shadow: 0 6px 16px rgba(0,0,0,.2); }
+  .btn:hover { background: #f96a05; }
+  #items { margin: 14px auto 0; max-width: 440px; text-align: left; }
+  #items ul { margin: 6px 0; }
+  .sparkle { color: #e5639a; }
 </style>
 </head>
 <body>
 <main>
-  <h1>PrintCutConjure Checkout</h1>
-  <p id="msg">Taking you to your item on Etsy, where you can check out securely…</p>
-  <div id="items"></div>
-  <a class="btn" id="go" href="https://printcutconjure.etsy.com">Continue to the PrintCutConjure Etsy Shop</a>
+  <h1>PrintCutConjure</h1>
+  <div class="card">
+    <p><span class="sparkle">✦</span> <strong>Almost yours!</strong> <span class="sparkle">✦</span></p>
+    <p id="msg">Taking you to your item on Etsy, where you can check out securely…</p>
+    <div id="items"></div>
+    <a class="btn" id="go" href="https://printcutconjure.etsy.com">Continue to the PrintCutConjure Etsy Shop</a>
+  </div>
 </main>
 <script>
 (function () {
