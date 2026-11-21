@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PrintCutConjure — Checkout</title>
+<style>
+  body { font-family: Georgia, 'Times New Roman', serif; margin: 0; background: #fdf8f3; color: #3a2e2e; text-align: center; }
+  main { max-width: 640px; margin: 0 auto; padding: 56px 20px; }
+  .btn { display: inline-block; background: #f1641e; color: #fff; text-decoration: none; padding: 14px 34px; border-radius: 30px; font-size: 1.15em; margin-top: 18px; }
+  .btn:hover { background: #d9550f; }
+  #items { margin: 18px auto; max-width: 480px; text-align: left; }
+</style>
+</head>
+<body>
+<main>
+  <h1>PrintCutConjure Checkout</h1>
+  <p id="msg">Taking you to your item on Etsy, where you can check out securely…</p>
+  <div id="items"></div>
+  <a class="btn" id="go" href="https://printcutconjure.etsy.com">Continue to the PrintCutConjure Etsy Shop</a>
+</main>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var products = params.get('products') || '';
+  var coupon = params.get('coupon') || '';
+  var entries = products.split(',').map(function (s) { return s.trim(); }).filter(Boolean).map(function (s) {
+    var parts = s.split(':');
+    return { id: parts[0], qty: parts[1] || '1' };
+  });
+  var listEl = document.getElementById('items');
+  var goEl = document.getElementById('go');
+  var msgEl = document.getElementById('msg');
+  function isEtsyId(id) { return /^[0-9]{6,}$/.test(id); }
+  if (entries.length) {
+    var html = '<p><strong>Your item(s):</strong></p><ul>';
+    entries.forEach(function (e) { html += '<li>Product ' + e.id + ' &times; ' + e.qty + '</li>'; });
+    if (coupon) { html += '</ul><p>Coupon: ' + coupon + ' — enter it at Etsy checkout.</p>'; } else { html += '</ul>'; }
+    listEl.innerHTML = html;
+  }
+  var target = 'https://printcutconjure.etsy.com';
+  if (entries.length === 1 && isEtsyId(entries[0].id)) {
+    target = 'https://printcutconjure.etsy.com/listing/' + entries[0].id;
+  }
+  goEl.href = target;
+  if (entries.length === 1 && isEtsyId(entries[0].id)) {
+    setTimeout(function () { window.location.href = target; }, 1500);
+  } else if (entries.length > 0) {
+    msgEl.textContent = 'Your items are waiting in the PrintCutConjure Etsy shop — tap below to view and check out securely on Etsy.';
+  } else {
+    msgEl.textContent = 'Welcome! All PrintCutConjure printables are sold through our Etsy shop — tap below to browse and check out securely.';
+  }
+})();
+</script>
+</body>
+</html>
