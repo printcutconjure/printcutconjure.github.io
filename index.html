@@ -9,54 +9,50 @@
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
-  body { font-family: 'Quicksand', sans-serif; margin: 0; background: #fff9f4; color: #43303e; }
-  .topbar { background: #2e1a33; color: #ffd9ec; text-align: center; padding: 9px 12px; font-weight: 600; letter-spacing: .4px; font-size: .95em; }
-  header { background: linear-gradient(120deg, #5b2a6e 0%, #a03d8f 38%, #e5639a 68%, #f59e6c 100%); color: #fff; text-align: center; padding: 58px 20px 46px; position: relative; overflow: hidden; }
-  header .sparkle { position: absolute; color: rgba(255,255,255,.75); font-size: 1.4em; }
-  header h1 { font-family: 'Great Vibes', cursive; font-weight: 400; font-size: 4em; margin: 0 0 4px; text-shadow: 0 3px 14px rgba(0,0,0,.25); }
-  header .tag { font-family: 'Playfair Display', serif; font-size: 1.25em; margin: 0; opacity: .96; }
-  header .sub { margin: 12px auto 0; max-width: 560px; font-size: 1.02em; opacity: .92; }
-  .btn { display: inline-block; background: #ff7a1a; color: #fff; text-decoration: none; padding: 15px 38px; border-radius: 40px; font-size: 1.18em; font-weight: 700; margin-top: 24px; box-shadow: 0 6px 18px rgba(0,0,0,.28); transition: transform .15s ease, background .15s ease; }
+  body { font-family: 'Quicksand', sans-serif; margin: 0; background: #f7f5fb; color: #2c2a3e; }
+  .topbar { background: #131c38; color: #cfd8ff; text-align: center; padding: 9px 12px; font-weight: 600; letter-spacing: .4px; font-size: .95em; }
+  .hero { background: #0d1430; text-align: center; }
+  .hero img { width: 100%; max-width: 1200px; display: block; margin: 0 auto; }
+  .hero-cta { background: linear-gradient(180deg, #0d1430, #1d2a52); text-align: center; padding: 10px 20px 40px; }
+  .hero-cta p { color: #dfe6ff; max-width: 600px; margin: 8px auto 0; font-size: 1.05em; }
+  .btn { display: inline-block; background: #ff7a1a; color: #fff; text-decoration: none; padding: 15px 38px; border-radius: 40px; font-size: 1.18em; font-weight: 700; margin-top: 20px; box-shadow: 0 6px 18px rgba(0,0,0,.35); transition: transform .15s ease, background .15s ease; }
   .btn:hover { background: #f96a05; transform: translateY(-2px) scale(1.03); }
-  main { max-width: 980px; margin: 0 auto; padding: 36px 18px 10px; }
-  h2 { font-family: 'Playfair Display', serif; text-align: center; font-size: 1.9em; margin: 26px 0 6px; color: #5b2a6e; }
-  .h2sub { text-align: center; color: #8a6d84; margin: 0 0 22px; }
+  main { max-width: 980px; margin: 0 auto; padding: 30px 18px 10px; }
+  h2 { font-family: 'Playfair Display', serif; text-align: center; font-size: 1.9em; margin: 26px 0 6px; color: #1d2a52; }
+  .h2sub { text-align: center; color: #6d6a8a; margin: 0 0 22px; }
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-  .card { border-radius: 18px; padding: 22px 16px 18px; text-align: center; border: 2px solid rgba(255,255,255,.7); box-shadow: 0 4px 14px rgba(91,42,110,.12); transition: transform .15s ease; }
+  .card { border-radius: 18px; padding: 22px 16px 18px; text-align: center; border: 2px solid rgba(255,255,255,.7); box-shadow: 0 4px 14px rgba(29,42,82,.13); transition: transform .15s ease; }
   .card:hover { transform: translateY(-4px); }
   .card .icon { font-size: 2.3em; display: block; margin-bottom: 8px; }
   .card h3 { margin: 0 0 6px; font-family: 'Playfair Display', serif; font-size: 1.15em; }
-  .card p { margin: 0; font-size: .93em; color: #5d4756; }
-  .c1 { background: #ffe3ef; } .c2 { background: #e4f2ff; } .c3 { background: #fff3d6; } .c4 { background: #e6f7e9; }
-  .c5 { background: #efe6ff; } .c6 { background: #ffe9dd; } .c7 { background: #e0f7f4; } .c8 { background: #fde8e8; }
-  .feat { background: #fff; border: 2px solid #f3d9ea; }
-  .feat .price { display: inline-block; background: #5b2a6e; color: #fff; border-radius: 20px; padding: 3px 14px; font-weight: 700; margin-top: 10px; }
-  .feat a.shop { display: inline-block; margin-top: 10px; color: #e5639a; font-weight: 700; text-decoration: none; }
+  .card p { margin: 0; font-size: .93em; color: #4c4a63; }
+  .c1 { background: #e3e9ff; } .c2 { background: #ece4ff; } .c3 { background: #fff3d6; } .c4 { background: #e6f7e9; }
+  .c5 { background: #ffe3ef; } .c6 { background: #ffe9dd; } .c7 { background: #e0f7f4; } .c8 { background: #fde8e8; }
+  .feat { background: #fff; border: 2px solid #d9def5; }
+  .feat .price { display: inline-block; background: #1d2a52; color: #fff; border-radius: 20px; padding: 3px 14px; font-weight: 700; margin-top: 10px; }
+  .feat a.shop { display: inline-block; margin-top: 10px; color: #a03d8f; font-weight: 700; text-decoration: none; }
   .feat a.shop:hover { text-decoration: underline; }
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 8px; }
-  .step { background: #2e1a33; color: #ffe9f4; border-radius: 16px; padding: 18px 14px; text-align: center; }
-  .step .n { font-family: 'Great Vibes', cursive; font-size: 2em; color: #ffb3d9; display: block; }
+  .step { background: #131c38; color: #e3e9ff; border-radius: 16px; padding: 18px 14px; text-align: center; }
+  .step .n { font-family: 'Great Vibes', cursive; font-size: 2em; color: #b9c6ff; display: block; }
   .step p { margin: 4px 0 0; font-size: .95em; }
   .cta { text-align: center; padding: 18px 0 8px; }
-  footer { text-align: center; color: #9a8595; font-size: .92em; padding: 26px 20px 34px; }
-  footer .heart { color: #e5639a; }
+  footer { text-align: center; color: #8a87a0; font-size: .92em; padding: 26px 20px 34px; }
+  footer .heart { color: #a03d8f; }
 </style>
 </head>
 <body>
 <div class="topbar">✦ Instant downloads &nbsp;•&nbsp; New printables every week &nbsp;•&nbsp; Most $4.99–$14.99 ✦</div>
-<header>
-  <span class="sparkle" style="top:18px; left:8%;">✦</span>
-  <span class="sparkle" style="top:64px; right:10%;">✦</span>
-  <span class="sparkle" style="bottom:20px; left:16%;">✧</span>
-  <span class="sparkle" style="bottom:34px; right:20%;">✧</span>
-  <h1>PrintCutConjure</h1>
-  <p class="tag">Pretty printables for planners, journals &amp; happy walls</p>
-  <p class="sub">Instant-download planners, junk journals, wall art, gift tags, stickers, bookmarks and calendars — designed with love in Florida and ready to print at home.</p>
+<div class="hero">
+  <img src="banner.jpg" alt="PrintCutConjure — Printable Planners, Gift Tags, Spell Pages">
+</div>
+<div class="hero-cta">
+  <p>Instant-download planners, junk journals, wall art, gift tags, stickers, bookmarks and calendars — designed with love in Florida and ready to print at home.</p>
   <a class="btn" href="https://printcutconjure.etsy.com">✿ Shop on Etsy ✿</a>
-</header>
+</div>
 <main>
   <h2>Shop by Favorite</h2>
-  <p class="h2sub">Tap a category to browse the Etsy shop</p>
+  <p class="h2sub">A little of everything, all instant download</p>
   <div class="grid">
     <div class="card c1"><span class="icon">🗓️</span><h3>Printable Planners</h3><p>Life, glam, macabre, MS-friendly, teacher &amp; more — $14.99</p></div>
     <div class="card c2"><span class="icon">📖</span><h3>Junk Journals</h3><p>Witchy, Parisian, Egyptian, travel &amp; Christmas sets — $14.99</p></div>
